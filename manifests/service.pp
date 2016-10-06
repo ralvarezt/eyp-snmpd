@@ -15,7 +15,10 @@ class snmpd::service inherits snmpd {
   {
     if($snmpd::manage_service)
     {
-      #service or exec here
+      service { $snmpd::params::service_name:
+        ensure => $snmpd::service_ensure,
+        enable => $snmpd::service_enable,
+      }
     }
   }
 }

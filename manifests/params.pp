@@ -1,9 +1,13 @@
 class snmpd::params {
 
+  $service_name = 'snmpd'
+
   case $::osfamily
   {
     'redhat':
     {
+      $package_name = 'net-snmp'
+
       case $::operatingsystemrelease
       {
         /^[5-7].*$/:
@@ -14,6 +18,8 @@ class snmpd::params {
     }
     'Debian':
     {
+      $package_name = 'snmpd'
+
       case $::operatingsystem
       {
         'Ubuntu':
