@@ -47,7 +47,7 @@ class { 'snmpd': }
 disable snmpd:
 
 ```
-class { 'prelink':
+class { 'snmpd':
   service_ensure => 'stopped',
   service_enable => false,
 }
@@ -56,7 +56,7 @@ class { 'prelink':
 purge snmpd:
 
 ```
-class { 'prelink':
+class { 'snmpd':
   package_ensure => 'purged',
   manage_service => false,
 }
