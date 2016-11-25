@@ -88,7 +88,9 @@ com2sec allowedhost <%= val %> <%= @community %>
 #group MyROGroup  any        mynetwork
 #
 #group MyRWGroup  any        otherv3user
-#...
+<% if defined?(@allowed_hosts) -%>
+group allowedhostsgroup any allowedhost
+<% end -%>
 
 ##           incl/excl subtree                          mask
 #view all    included  .1                               80
@@ -101,6 +103,9 @@ com2sec allowedhost <%= val %> <%= @community %>
 ##                context sec.model sec.level prefix read   write  notif
 #access MyROGroup ""      any       noauth    0      all    none   none
 #access MyRWGroup ""      any       noauth    0      all    all    all
+<% if defined?(@allowed_hosts) -%>
+access allowedhostsgroup ""      any       noauth    0      all    none   none
+<% end -%>
 
 
 ###############################################################################
