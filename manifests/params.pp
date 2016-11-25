@@ -6,7 +6,7 @@ class snmpd::params {
   {
     'redhat':
     {
-      $package_name = 'net-snmp'
+      $package_name = [ 'net-snmp', 'net-snmp-utils' ]
 
       case $::operatingsystemrelease
       {
