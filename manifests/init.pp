@@ -9,6 +9,8 @@ class snmpd (
               $manage_docker_service = true,
               $service_ensure        = 'running',
               $service_enable        = true,
+              $community             = 'public',
+              $subtree               = [ '.1.3.6.1.2.1.1', '.1.3.6.1.2.1.25.1.1' ],
             ) inherits snmpd::params{
 
   class { '::snmpd::install': } ->
