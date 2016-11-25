@@ -55,7 +55,7 @@ group   notConfigGroup v2c           notConfigUser
 
 # Make at least  snmpwalk -v 1 localhost -c public system fast again.
 #       name           incl/excl     subtree         mask(optional)
-<% @each.subtree do | val | -%>
+<% @subtree.each do | val | -%>
 view    systemview    included   <%= val %>
 <% end -%>
 
