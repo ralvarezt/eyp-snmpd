@@ -77,6 +77,11 @@ access  notConfigGroup ""      any       noauth    exact  systemview none none
 ##       sec.name  source          community
 #com2sec local     localhost       COMMUNITY
 #com2sec mynetwork NETWORK/24      COMMUNITY
+<% if defined?(@allowed_hosts) -%>
+<% @allowed_hosts.each do | val | -%>
+com2sec allowedhost <%= val %> <%= @community %>
+<% end -%>
+<% end -%>
 
 ##     group.name sec.model  sec.name
 #group MyRWGroup  any        local
