@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.1.3
+
+* added system snmp variables:
+  * syscontact
+  * syslocation
+
 ## 0.1.2
 
 * added **snmpd::allowed_hosts**
