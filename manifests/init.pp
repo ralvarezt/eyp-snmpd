@@ -13,7 +13,7 @@ class snmpd (
               $subtree               = [ '.1.3.6.1.2.1.1', '.1.3.6.1.2.1.25.1.1' ],
               $allowed_hosts         = [ 'default' ],
               $syslocation           = 'somewhere',
-              $syscontact            = 'root@localhost',
+              $syscontact            = 'someone',
             ) inherits snmpd::params{
   validate_array($subtree)
   validate_array($allowed_hosts)
