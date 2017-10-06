@@ -5,7 +5,7 @@
   "summary": "SNMP agent management",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-snmpd",
-  "project_page": null,
+  "project_page": "https://github.com/NTTCom-MS/eyp-snmpd",
   "issues_url": "https://github.com/NTTCom-MS/eyp-snmpd/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
