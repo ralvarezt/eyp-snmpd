@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.4
+
+* improved deletion support
+
 ## 0.1.3
 
 * added system snmp variables:

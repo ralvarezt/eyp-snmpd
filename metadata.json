@@ -1,11 +1,11 @@
 {
   "name": "eyp-snmpd",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "eyp",
   "summary": "SNMP agent management",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-snmpd",
-  "project_page": null,
+  "project_page": "https://github.com/NTTCom-MS/eyp-snmpd",
   "issues_url": "https://github.com/NTTCom-MS/eyp-snmpd/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
@@ -38,10 +38,6 @@
     }
   ],
   "requirements": [
-    {
-      "name": "pe",
-      "version_requirement": ">= 3.0.0"
-    },
     {
       "name": "puppet",
       "version_requirement": ">= 3.0.0"
