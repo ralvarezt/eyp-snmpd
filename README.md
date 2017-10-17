@@ -29,7 +29,7 @@ This module is intended to disable snmpd
 
 * snmpd package
 * snmpd service
-*
+
 ### Setup Requirements
 
 This module requires pluginsync enabled
