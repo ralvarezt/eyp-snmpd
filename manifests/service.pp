@@ -1,5 +1,4 @@
 class snmpd::service inherits snmpd {
-
   #
   validate_bool($snmpd::manage_docker_service)
   validate_bool($snmpd::manage_service)

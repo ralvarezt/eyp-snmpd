@@ -1,7 +1,3 @@
-# == Class: snmpd
-#
-# === snmpd::install documentation
-#
 class snmpd::install inherits snmpd {
 
   if($snmpd::manage_package)

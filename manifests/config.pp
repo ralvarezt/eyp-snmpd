@@ -1,7 +1,3 @@
-# == Class: snmpd
-#
-# === snmpd::config documentation
-#
 class snmpd::config inherits snmpd {
 
   if($snmpd::manage_package and $snmpd::package_ensure!='absent')
