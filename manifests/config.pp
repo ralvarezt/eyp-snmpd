@@ -9,5 +9,13 @@ class snmpd::config inherits snmpd {
       mode    => '0600',
       content => template("${module_name}/snmpdconf.erb"),
     }
+  
+    file { '${var_net_snmp}/${service_name}.conf':
+      notify    => Service['${service_name}'],
+      ensure    => 'present',
+      owner     => 'root',
+      group     => 'root',
+      mode      => '0600',
+    }
   }
 }
