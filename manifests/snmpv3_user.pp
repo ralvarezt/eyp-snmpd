@@ -1,4 +1,4 @@
-define snmpd::snmpv3_user (
+define ::snmpd::snmpv3_user (
     $authpass,
     $authtype   = 'SHA',
     $privpass   = undef,
@@ -6,12 +6,12 @@ define snmpd::snmpv3_user (
 ) {
 
   include ::snmpd
-  
+
   $cmd = $privpass ? {
     undef   => "createUser ${title} ${authtype} \"${authpass}\"",
     default => "createUser ${title} ${authtype} \"${authpass}\" ${privtype} \"${privpass}\""
   }
-  
+
   if ($title in $facts['snmpv3_user']) {
     # user details from config are available as fact
     $usm_user = $facts['snmpv3_user'][$title]
@@ -32,14 +32,13 @@ define snmpd::snmpv3_user (
     $create = true
   }
   if $create {
-   file_line { "create-snmpv3-user-${title}":
-      path      => "${snmp::var_net_snmp}/${service_name}.conf",
-      line      => $cmd,
-      match     => "^createUser ${title} ",
-      notify    => Service[$service_name],
-      require   => File["${snmp::var_net_snmp}/${service_name}.conf"],
-      before    => Service[$service_name],
+    file_line { "create-snmpv3-user-${title}":
+      path    => "${::var_net_snmp}/${::service_name}.conf",
+      line    => $cmd,
+      match   => "^createUser ${title} ",
+      notify  => Service[$::service_name],
+      require => File["${::var_net_snmp}/${::service_name}.conf"],
+      before  => Service[$::service_name],
     }
   }
-    
 }
